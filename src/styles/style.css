@@ -1,29 +1,67 @@
+* {
+    margin: 0px;
+    padding: 0px;
 
+}
 
-.App{
+.App {
     background-color: black;
     height: 100vh;
     display: flex;
     text-align: center;
 }
 
-.App-header{
+.App-header {
+    
     display: flex;
     background-color: #ECECEC;
     height: 10vh;
-    width: 80%;
-    margin: 2% 0 0 10%;
+    width: 90%;
+    margin: 1% auto;
+
 
 }
 
-.nav{
+header .nav {
+    display: flex;
     width: 100%;
-}
-
-
-h1{
-    color:black;
-    margin: auto;   
+    height: 100%;
+    align-items: center;
 
 }
 
+header .nav ul{
+    display: flex;
+    width: 40%;
+    list-style: none;
+    margin-right: 0;
+    margin-left: auto;
+    
+    
+}
+
+
+header .nav li {
+    padding: 4%;
+    margin: auto;
+}
+
+header .nav label {
+    padding-left: 1%;
+
+    width: 10%;
+
+}
+
+header .nav li:hover {
+    color: #ececec;
+    background-color: #C29B3B;
+    border-radius: 7%;
+
+
+
+}
+
+.nameApp {
+    font-weight: bold;
+}

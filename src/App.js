@@ -1,11 +1,12 @@
 
-import Menu from './components/menu.js';
+import NavBar from './components/NavBar.js';
+
 
 
 function App() {
   return (
     <div className="App">
-    <Menu />
+    <NavBar />
     </div>
   );
 }
