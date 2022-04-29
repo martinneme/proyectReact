@@ -1,9 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 
 .App{
     background-color: black;
     height: 100vh;
-    display: flex;
     text-align: center;
 }
 
@@ -12,12 +17,23 @@
     background-color: #ECECEC;
     height: 10vh;
     width: 80%;
-    margin: 2% 0 0 10%;
+    margin: auto;
 
 }
 
-.nav{
+
+nav{
     width: 100%;
+}
+
+.bg-light{
+    background-color: #ECECEC!important;
+}
+
+.taskTitle{
+    color: #000;
+    font-size: 2rem;
+    background-color: #ECECEC;
 }
 
 
@@ -27,3 +43,14 @@ h1{
 
 }
 
+.cartClass{
+    background-color: #ECECEC;
+    border: none;
+   width: 50px;
+}
+
+.list-group-flush{
+    padding-top: 2%;
+    width: 80%;
+    margin: auto;
+}
