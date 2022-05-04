@@ -29,8 +29,13 @@ nav{
 .bg-light{
     background-color: #ECECEC!important;
 }
+.BoxProd{
+    padding-top: 2%;
+   
+}
 
 .taskTitle{
+   width: 80%;
     color: #000;
     font-size: 2rem;
     background-color: #ECECEC;
@@ -54,4 +59,30 @@ h1{
     padding-top: 2%;
     width: 80%;
     margin: auto;
+}
+
+.Products{
+    display: flex;
+    width: 80%;
+    padding-top: 1%;
+    margin: auto;
+}
+
+.CardProd{
+    width:25%;
+    margin: 1%;
+}
+
+.itemPanelAdd{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.itemAddCard{
+    margin: 5%;
+}
+
+.itemCountValue{
+    margin: 5%;
 }
