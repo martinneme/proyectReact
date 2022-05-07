@@ -12,7 +12,7 @@ function App() {
       
       </header>
       <main className="main">
-      <ItemListContainer Task1={["Terminar Entregable","Agregar cambios","Realizar Commit","Pushear a github"]} />
+      <ItemListContainer />
       </main>
     </div>
   );

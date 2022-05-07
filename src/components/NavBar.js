@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <Navbar className="nav" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Mi primera App</Navbar.Brand>
+        <Navbar.Brand href="#home">Kuki App</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="#home">Inicio</Nav.Link>
           <Nav.Link href="#features">Nosotros</Nav.Link>

@@ -6,11 +6,12 @@ import { products } from "../../data/products";
 
 export default function ItemListContainer() {
 
-  setTimeout(function(){
-   console.log("Recuperando informacion");
-   console.log(products);
-}, 3000);
- 
+  const newTask = new Promise ((resolve, reject) => {
+    setTimeout(() => {
+      resolve(products);
+    }, 3000)
+    
+  })
  
   return (
     <>
