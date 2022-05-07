@@ -68,6 +68,8 @@ h1{
     margin: auto;
 }
 
+
+
 .CardProd{
     width:25%;
     margin: 1%;
@@ -85,4 +87,10 @@ h1{
 
 .itemCountValue{
     margin: 5%;
+}
+
+.prodImgStyle{
+    width: 100%;
+    border-radius:5px;
+    padding-bottom: 5%;
 }
