@@ -6,7 +6,7 @@ export default function Item({ item }) {
     <>
       <Card className="CardProd">
         <Card.Body>
-        <img class="prodImgStyle" src={item.urlImg} alt="Card cap"/>
+        <img className="prodImgStyle" src={item.urlImg} alt="Card cap"/>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>{item.description}</Card.Text>
           <Card.Text>{item.price}</Card.Text>
