@@ -1,12 +1,13 @@
+
 import Item from "./Item"
 
-export default function ItemList({response}) {
+export default function ItemList({listProducts}) {
 
 
   return (
     <div className="Products">
-      {response.map((re) => {
-        return <Item item={re} key={re.id} />;
+      {listProducts.map((products) => {
+        return <Item item={products} key={products.id} />;
       })}
      
     </div>

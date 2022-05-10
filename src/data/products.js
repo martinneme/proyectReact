@@ -26,3 +26,16 @@ export  const products= [{
 }
 
 ]
+
+
+export  const newTask = new Promise ((resolve, reject) => {
+    setTimeout(() => {
+      let StateOfAnswer = true;
+      if(StateOfAnswer){
+         resolve(products);
+      }else{
+        reject("No se han podido obtener los datos del servidor")
+      } 
+    }, 3000)
+    
+  })

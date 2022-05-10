@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,13 +6,13 @@
 
 
 
-.App{
+.App {
     background-color: black;
     height: 100vh;
     text-align: center;
 }
 
-.App-header{
+.App-header {
     display: flex;
     background-color: #ECECEC;
     height: 10vh;
@@ -22,46 +22,51 @@
 }
 
 
-nav{
+nav {
     width: 100%;
 }
 
-.bg-light{
-    background-color: #ECECEC!important;
-}
-.BoxProd{
-    padding-top: 2%;
-   
+.bg-light {
+    background-color: #ECECEC !important;
 }
 
-.taskTitle{
-   width: 80%;
+.BoxProd {
+    padding-top: 2%;
+
+}
+
+.taskTitle {
+    display: flex;
+    margin: auto;
+    margin-bottom: 2%;
+    justify-content: center;
+    width: 80%;
     color: #000;
     font-size: 2rem;
     background-color: #ECECEC;
 }
 
 
-h1{
-    color:black;
-    margin: auto;   
+h1 {
+    color: black;
+    margin: auto;
 
 }
 
-.cartClass{
+.cartClass {
     background-color: #ECECEC;
     border: none;
-   width: 50px;
-   height: 100%;
+    width: 50px;
+    height: 100%;
 }
 
-.list-group-flush{
+.list-group-flush {
     padding-top: 2%;
     width: 80%;
     margin: auto;
 }
 
-.Products{
+.Products {
     display: flex;
     width: 80%;
     padding-top: 1%;
@@ -70,27 +75,31 @@ h1{
 
 
 
-.CardProd{
-    width:25%;
+.CardProd {
+    width: 25%;
     margin: 1%;
 }
 
-.itemPanelAdd{
+.itemPanelAdd {
     display: flex;
     width: 100%;
     justify-content: center;
 }
 
-.itemAddCard{
+.itemAddCard {
     margin: 5%;
 }
 
-.itemCountValue{
+.itemCountValue {
     margin: 5%;
 }
 
-.prodImgStyle{
+.prodImgStyle {
     width: 100%;
-    border-radius:5px;
+    border-radius: 5px;
     padding-bottom: 5%;
+}
+
+.spinner {
+    color: white;
 }

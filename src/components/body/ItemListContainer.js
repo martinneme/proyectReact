@@ -1,24 +1,27 @@
 
 
 import ItemList from "./ItemList"
-import React, { useState } from 'react'
-import { products } from "../../data/products";
+import React, { useEffect, useState } from 'react'
+import { newTask } from "../../data/products";
+import SpinnerLoading from "../Spinner/Spinner";
 
 export default function ItemListContainer() {
+const [listProducts,setListProducts] = useState([])
+const [loading,setLoading]=useState(false)
 
-  const newTask = new Promise ((resolve, reject) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 3000)
-    
-  })
+useEffect(()=>{
+  setLoading(true)
+  newTask
+  .then((res)=>setListProducts(res))
+  .catch((error)=>console.log(error))
+  .finally(()=>setLoading(false))
+},[])
  
   return (
     <>
     <div className="BoxProd"> 
       <label className="taskTitle">Products</label>
-      <div className="Products"></div>     
-      <ItemList response={products}/>
+      {loading ? <SpinnerLoading /> : <ItemList listProducts={listProducts}/> }
       </div>
       </>
   );
