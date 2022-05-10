@@ -13,7 +13,7 @@ useEffect(()=>{
   setLoading(true)
   newTask
   .then((res)=>setListProducts(res))
-  .catch((error)=>console.log(error))
+  .catch((error)=>console.error(error))
   .finally(()=>setLoading(false))
 },[])
  

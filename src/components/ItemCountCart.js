@@ -15,12 +15,10 @@ const addItem  = () => {
 }
 
 React.useEffect(()=>{
-    if(itemCount !== initial){ 
-    console.log(`Ha cambiado las cantidades a ${itemCount}`)
     if(itemCount === stock){
         console.log("Has alcanzado el limite de stock")
-    }}
-},[itemCount])
+    }
+},[itemCount,stock,initial])
 
 
   return (
