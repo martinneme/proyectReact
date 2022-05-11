@@ -25,9 +25,9 @@ React.useEffect(()=>{
   <>
    <div className='itemAddCard' >
        <div className='itemPanelAdd'>
-    <Button onClick={delItem}>-</Button>
+    <Button className='details' onClick={delItem}>-</Button>
     <p className='itemCountValue'>{itemCount}</p>
-    <Button onClick={addItem}>+</Button>
+    <Button className='details' onClick={addItem}>+</Button>
        </div>
    </div>
     </>

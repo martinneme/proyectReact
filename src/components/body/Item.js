@@ -10,8 +10,9 @@ export default function Item({ item }) {
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>{item.description}</Card.Text>
           <Card.Text>{item.price}</Card.Text>
+          <Button variant="primary details">Detalles</Button>
           <ItemCountCart  stock={item.stock} initial={1} />
-          <Button variant="primary">Agregar al carrito</Button>
+          <Button variant="primary details">Agregar al carrito</Button>
         </Card.Body>
       </Card>
     </>
