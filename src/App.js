@@ -13,7 +13,12 @@ function App() {
       </header>
       <main className="main">
       <ItemListContainer />
-      <ItemDetails />
+      <ItemDetails title={"Robust Style"} 
+      slogan={"For Champions. We think that is great for you."}
+      shipping={"Immediate delivery - Free shipping"}
+      size={"Size: Small - Medium - Hacemos envíos gratis a través de Mercado Envíos.Trabajamos con Mercado Pago por lo que aceptamos todos los medios de pago que aparezcan ahí."}
+      price={"$244"}
+      />
       </main>
     </div>
   );

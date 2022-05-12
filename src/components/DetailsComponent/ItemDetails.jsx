@@ -1,6 +1,10 @@
 import { Card, Button, ListGroupItem, ListGroup } from "react-bootstrap";
 
-export default function ItemDetails() {
+export default function ItemDetails({title,slogan,shipping,size,price}) {
+  
+  //Los parametros de entrada deberian 
+  //reemplazarse por el objeto producto una vez invocado dentro de item.jsx
+  
   return (
 
 <> 
@@ -12,13 +16,12 @@ export default function ItemDetails() {
           alt="Card cap"
         />
         <ListGroup variant="flush bodyDetailCard">
-        <Card.Title>Robust Style</Card.Title>
-          <ListGroupItem>For Champions. We think that is great for you.</ListGroupItem>
-          <ListGroupItem>Immediate delivery - Free shipping</ListGroupItem>
-          <ListGroupItem>Size: Small - Medium -
-          Hacemos envíos gratis a través de Mercado Envíos.Trabajamos con Mercado Pago por lo que aceptamos todos los medios de pago que aparezcan ahí.
+        <Card.Title>{title}</Card.Title>
+          <ListGroupItem>{slogan}</ListGroupItem>
+          <ListGroupItem>{shipping}</ListGroupItem>
+          <ListGroupItem>{size}
           </ListGroupItem>
-          <ListGroupItem>$244</ListGroupItem>
+          <ListGroupItem>{price}</ListGroupItem>
         </ListGroup>
         <Button variant="primary details">Agregar al carrito</Button>
         </Card.Body>
