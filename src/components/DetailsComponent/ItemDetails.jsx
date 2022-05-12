@@ -1,5 +1,5 @@
 import { Card, Button, ListGroupItem, ListGroup } from "react-bootstrap";
-
+import ItemCountCart from "../ItemCount/ItemCountCart";
 export default function ItemDetails({title,slogan,shipping,size,price}) {
   
   //Los parametros de entrada deberian 
@@ -22,8 +22,10 @@ export default function ItemDetails({title,slogan,shipping,size,price}) {
           <ListGroupItem>{size}
           </ListGroupItem>
           <ListGroupItem>{price}</ListGroupItem>
+          <ListGroupItem> <ItemCountCart  stock={5} initial={1} /></ListGroupItem>
         </ListGroup>
         <Button variant="primary details">Agregar al carrito</Button>
+     
         </Card.Body>
         <Card.Footer className="detailsFooter">
           <Button variant="primary btnVolver">Volver</Button>
