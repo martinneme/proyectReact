@@ -1,5 +1,5 @@
 import { Card, Button } from "react-bootstrap";
-import ItemCountCart from "../ItemCountCart";
+import ItemCountCart from "../ItemCount/ItemCountCart";
 
 export default function Item({ item }) {
   return (

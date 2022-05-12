@@ -1,5 +1,5 @@
 import { Nav, Navbar, Container } from "react-bootstrap";
-import CartComponent from "./Cart/CartComponent";
+import CartComponent from "../Cart/CartComponent";
 
 export default function NavBar() {
   return (
