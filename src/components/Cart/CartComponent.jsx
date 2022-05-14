@@ -11,7 +11,7 @@ export default function CartComponent() {
   return (
     <Button className="cartClass" variant="light">
       <Badge pill bg="info">
-        <img src="./img/cart.svg" alt="cart" />
+        <img src="../img/cart.svg" alt="cart" />
         {countItemCart}
       </Badge>
     </Button>

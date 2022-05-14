@@ -2,7 +2,7 @@ import ItemList from "../ItemList/ItemList";
 import React, { useEffect, useState } from "react";
 import SpinnerLoading from "../Spinner/Spinner";
 import { useParams } from "react-router-dom";
-import ItemDetailsContainer from "../DetailsComponent/ItemDetailsContainer";
+
 
 export default function ItemListContainer() {
   const [listProducts, setListProducts] = useState([]);
@@ -34,7 +34,7 @@ export default function ItemListContainer() {
         }});
 
     // eslint-disable-next-line
-  }, []);
+  },[id]);
 
   return (
     <>

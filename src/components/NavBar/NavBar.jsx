@@ -7,20 +7,20 @@ export default function NavBar() {
     <header className="App-header">
       <Navbar className="nav" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">Kuki App</Navbar.Brand>
+          <Navbar.Brand href="/">Kuki App</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link>
-              <NavLink to="/">Inicio</NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="category/1">Categoria 1</NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="category/2">Categoria 2</NavLink>
-            </Nav.Link>
-            <Nav.Link>
-              <NavLink to="category/3">Categoria 3</NavLink>
-            </Nav.Link>
+   
+              <NavLink to="/" className="btnNav">Inicio</NavLink>
+         
+          
+              <NavLink to="/category/1" className="btnNav" >Categoria 1</NavLink>
+  
+      
+              <NavLink to="/category/2" className="btnNav" >Categoria 2</NavLink>
+  
+       
+              <NavLink to="/category/3" className="btnNav" >Categoria 3</NavLink>
+      
           </Nav>
         </Container>
         <CartComponent />

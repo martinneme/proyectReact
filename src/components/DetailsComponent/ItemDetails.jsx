@@ -1,8 +1,15 @@
 import { Card, Button, ListGroupItem, ListGroup } from "react-bootstrap";
 import ItemCountCart from "../ItemCount/ItemCountCart";
+import { useNavigate } from "react-router-dom";
+
+
 export default function ItemDetails({productDetail}) {
-  const {title,description,descriptionExtend,price} = productDetail
-  
+  const {title,description,descriptionExtend,price,urlImg} = productDetail
+  const nav = useNavigate()
+
+
+
+
   return (
 
 <> 
@@ -10,7 +17,7 @@ export default function ItemDetails({productDetail}) {
      <Card.Body className="CardProdDetailBody"> 
         <Card.Img
           className="prodDetailsImgStyle"
-          src="./img/watch1.jpg"
+          src={urlImg}
           alt="Card cap"
         />
         <ListGroup variant="flush bodyDetailCard">
@@ -24,7 +31,7 @@ export default function ItemDetails({productDetail}) {
      
         </Card.Body>
         <Card.Footer className="detailsFooter">
-          <Button variant="primary btnVolver">Volver</Button>
+          <Button variant="primary btnVolver"  onClick={()=> nav(`/`)}>Volver</Button>
         </Card.Footer>
       </Card>
     
