@@ -191,3 +191,15 @@ h1 {
 .navbar-brand,.navbar-nav{
     flex-wrap: wrap;
 }
+
+.addToCart{
+    margin: 2%;
+    color: #FFFFFF!important;
+    background-color: #000000!important;
+}
+
+.addToCart:hover{
+    background-color: #58D68D!important;
+    border-color: #58D68D!important;
+    color: #000000!important;  
+}

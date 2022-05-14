@@ -27,7 +27,7 @@ export default function ItemDetails({productDetail}) {
           <ListGroupItem>{price}</ListGroupItem>
           <ListGroupItem> <ItemCountCart  stock={5} initial={1} /></ListGroupItem>
         </ListGroup>
-        <Button variant="primary details">Agregar al carrito</Button>
+        <Button variant="primary addToCart">Agregar al carrito</Button>
      
         </Card.Body>
         <Card.Footer className="detailsFooter">

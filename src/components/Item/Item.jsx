@@ -22,7 +22,7 @@ export default function Item({ item }) {
           </Card.Body>
           <Card.Footer className="itemFooter">
           <ItemCountCart  stock={item.stock} initial={1} />
-          <Button variant="primary details" >Agregar al carrito</Button>
+          <Button variant="primary addToCart" >Agregar al carrito</Button>
         </Card.Footer>
       </Card>
     </>
