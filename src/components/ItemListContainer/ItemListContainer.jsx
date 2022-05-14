@@ -39,7 +39,7 @@ export default function ItemListContainer() {
   return (
     <>
       <div className="BoxProd">
-        <label className="taskTitle">Products</label>
+        <label className="sectionTitle">Products</label>
         {loading ? (
           <SpinnerLoading />
         ) : (

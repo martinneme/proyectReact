@@ -40,20 +40,24 @@ nav {
     background-color: #ECECEC !important;
 }
 
+.bg-info{
+background-color: #5DADE2!important;
+}
+
 .BoxProd {
     padding-top: 2%;
 
 }
 
-.taskTitle {
+.sectionTitle {
     display: flex;
     margin: auto;
     margin-bottom: 2%;
     justify-content: center;
     width: 80%;
-    color: #000;
+    color: #FFFFFF;
     font-size: 2rem;
-    background-color: #ECECEC;
+    background-color: #000000
 }
 
 
@@ -104,7 +108,7 @@ h1 {
 .CardProdDetailBody{
     display: flex;
    flex-direction: row!important;
-    width: 80%;
+    width: 100%;
     margin: auto;
 
 }
@@ -139,13 +143,13 @@ h1 {
 .prodImgStyle {
     width: 100%;
     border-radius: 5px;
-    padding-bottom: 5%;
+    padding-bottometailsFooter: 5%;
 }
 
 .prodDetailsImgStyle {
     width: 30%!important;
-    border-radius: 5px;
-    padding-bottom: 5%;
+    border-radius: 5px!important;
+    margin-right: 2%;
 }
 
 
@@ -161,3 +165,29 @@ h1 {
     color: #000000!important;
 }
 
+.detailsFooter{
+    background-color: #ECECEC!important;
+}
+
+
+.btn-primary{
+    border-color: #000000!important;
+}
+
+.btn-primary:hover{
+    color: #ececec !important;;
+    background-color: #000000!important;
+    border-color: #000000!important;
+
+}
+
+
+.btnNav:hover{
+    color: #5DADE2;
+
+}
+
+
+.navbar-brand,.navbar-nav{
+    flex-wrap: wrap;
+}
