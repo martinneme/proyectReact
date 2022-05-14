@@ -1,9 +1,7 @@
 import { Card, Button, ListGroupItem, ListGroup } from "react-bootstrap";
 import ItemCountCart from "../ItemCount/ItemCountCart";
-export default function ItemDetails({title,slogan,shipping,size,price}) {
-  
-  //Los parametros de entrada deberian 
-  //reemplazarse por el objeto producto una vez invocado dentro de item.jsx
+export default function ItemDetails({productDetail}) {
+  const {title,description,descriptionExtend,price} = productDetail
   
   return (
 
@@ -17,10 +15,8 @@ export default function ItemDetails({title,slogan,shipping,size,price}) {
         />
         <ListGroup variant="flush bodyDetailCard">
         <Card.Title>{title}</Card.Title>
-          <ListGroupItem>{slogan}</ListGroupItem>
-          <ListGroupItem>{shipping}</ListGroupItem>
-          <ListGroupItem>{size}
-          </ListGroupItem>
+          <ListGroupItem>{description}</ListGroupItem>
+          <ListGroupItem>{descriptionExtend}</ListGroupItem>
           <ListGroupItem>{price}</ListGroupItem>
           <ListGroupItem> <ItemCountCart  stock={5} initial={1} /></ListGroupItem>
         </ListGroup>
