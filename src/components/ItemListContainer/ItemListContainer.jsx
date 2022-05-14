@@ -46,7 +46,7 @@ export default function ItemListContainer() {
           <ItemList listProducts={listProducts} />
         )}
       </div>
-      <ItemDetailsContainer  />
+    
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function ItemDetailsContainer() {
 
       fetch("https://apimocha.com/watchproducts/watch")
         .then((response) => response.json())
-        .then((res) => setProductDetail(res.find((item)=>item.id === '2')))
+        .then((res) => setProductDetail(res.find((item)=>item.id === '1')))
         .catch((error) => console.error(error))
         .finally(() => setLoading(false));
   
