@@ -7,7 +7,7 @@ export default function NavBar() {
     <header className="App-header">
       <Navbar className="nav" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="/">Kuki App</Navbar.Brand>
+          <Navbar.Brand href="/">Kuki Store</Navbar.Brand>
           <Nav className="me-auto">
    
               <NavLink to="/" className="btnNav">Inicio</NavLink>

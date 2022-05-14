@@ -81,13 +81,19 @@ h1 {
     width: 80%;
     padding-top: 1%;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 
 
 .CardProd {
-    width: 25%;
+    width: 23%;
     margin: 1%;
+}
+
+.itemFooter{
+   
+    background-color: #ECECEC!important;
 }
 
 .CardProdDetail{
@@ -104,7 +110,8 @@ h1 {
 }
 
 .card-footer{
-    background-color: #ECECEC!important;
+ border: none!important;
+    background-color: #ffffff!important;
 }
 
 .btnVolver{
@@ -123,9 +130,7 @@ h1 {
     justify-content: center;
 }
 
-.itemAddCard {
-    margin: 5%;
-}
+
 
 .itemCountValue {
     margin: 5%;
@@ -145,13 +150,13 @@ h1 {
 
 
 .spinner {
-   
+    margin-top: 10%;
     color: #000000!important;
 }
 
 
 .details{
-    margin: 5%;
+    margin: 2%;
     background-color: #FFFFFF!important;
     color: #000000!important;
 }
