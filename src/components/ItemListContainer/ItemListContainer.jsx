@@ -12,29 +12,21 @@ export default function ItemListContainer() {
 
   useEffect(() => {
     setLoading(true);
-    const products = [];
-
 
     fetch("https://apimocha.com/watchproducts/watch")
       .then((response) => response.json())
       .then((res) => {
-        res.forEach((e) => {
-          products.push(e)
-        })
-      })
-      .catch((error) => console.error(error))
-      .finally(() =>{
-        setLoading(false)
-      
         if(!id){
-          setListProducts(products)
+          setListProducts(res)
         }else{
-          const productsFilters = products.filter((product => product.category === id))
+          const productsFilters = res.filter((product => product.category === id))
           setListProducts(productsFilters)
-        }});
-
+        }})
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+      
     // eslint-disable-next-line
-  },[id]);
+      },[id]);
 
   return (
     <>

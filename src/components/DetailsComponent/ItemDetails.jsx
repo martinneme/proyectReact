@@ -4,10 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function ItemDetails({productDetail}) {
-  const {title,description,descriptionExtend,price,urlImg} = productDetail
+  const {title,description,descriptionExtend,price,urlImg,stock} = productDetail
   const nav = useNavigate()
-
-
 
 
   return (
@@ -25,7 +23,7 @@ export default function ItemDetails({productDetail}) {
           <ListGroupItem>{description}</ListGroupItem>
           <ListGroupItem>{descriptionExtend}</ListGroupItem>
           <ListGroupItem>{price}</ListGroupItem>
-          <ListGroupItem> <ItemCountCart  stock={5} initial={1} /></ListGroupItem>
+          <ListGroupItem> <ItemCountCart  stock={stock} initial={1} /></ListGroupItem>
         </ListGroup>
         <Button variant="primary addToCart">Agregar al carrito</Button>
      

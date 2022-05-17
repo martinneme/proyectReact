@@ -86,6 +86,7 @@ h1 {
     padding-top: 1%;
     margin: auto;
     flex-wrap: wrap;
+
 }
 
 
@@ -143,7 +144,7 @@ h1 {
 .prodImgStyle {
     width: 100%;
     border-radius: 5px;
-    padding-bottometailsFooter: 5%;
+    padding-bottom: 5%;
 }
 
 .prodDetailsImgStyle {
@@ -200,6 +201,29 @@ h1 {
 
 .addToCart:hover{
     background-color: #58D68D!important;
-    border-color: #58D68D!important;
+    border-color: #58D68D;
     color: #000000!important;  
+}
+
+.Footer{
+    display: flex!important;
+    flex-direction: row!important;
+width: 100%!important;
+border: none!important;
+
+    }
+
+
+.cardFooter{
+    background-color: #ECECEC;
+    width: 33%!important;
+    flex-wrap: nowrap!important;
+
+}
+
+.FooterCP{
+    border: none!important;
+    width: 100%!important;
+    display: block;
+    background-color: #D8D8D8!important;
 }
