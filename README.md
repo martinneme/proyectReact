@@ -1,3 +1,13 @@
+# Kuki Store -
+
+Esta aplicacion web es una tienda de Relojes realizada sobre el framework de React.
+Funcionalmente permitira que el potencial cliente, visualice la oferta de productos y cantida de stock disponible, pueda agregarlos a un carrito de compras y finalizar con el pago de la misma.
+
+Los productos estan publicados en Mocha API, permitiendo la simulacion de la consulta a una API productiva.
+
+
+__________________________________________________________________________________
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -17,7 +17,7 @@ function App() {
     <Route path = '/product/:id'  element = {<ItemDetailsContainer/>} />
     </Routes>
     </BrowserRouter>
-    < Footer />
+
     </div>
   );
 }
