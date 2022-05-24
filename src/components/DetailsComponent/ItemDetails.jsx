@@ -6,14 +6,21 @@ import { useContext } from "react";
 import { cartContext } from "../../context/CartContext";
 
 export default function ItemDetails({ productDetail }) {
-  const { title, description, descriptionExtend, price, urlImg, stock } = productDetail;
-  
+  const { title, description, descriptionExtend, price, urlImg, stock } =
+    productDetail;
+
   const nav = useNavigate();
 
-  const {addToCart} = useContext(cartContext)
- 
-   const [quantity,setQuantity] = useState(0)
- 
+  const { addToCart } = useContext(cartContext);
+
+  const [enableCount, setEnableCount] = useState(true);
+  const [quantity, setQuantity] = useState(0);
+
+  const ClickToAddToCart = (quantity) => {
+    addToCart(productDetail,quantity);
+    setEnableCount(false);
+    setQuantity(quantity);
+  };
 
   return (
     <>
@@ -30,7 +37,22 @@ export default function ItemDetails({ productDetail }) {
             <ListGroupItem>{descriptionExtend}</ListGroupItem>
             <ListGroupItem>{price}</ListGroupItem>
             <ListGroupItem>
-              <ItemCountCart stock={stock} initial={1} quantity={quantity} setQuantity={setQuantity} addToCart={addToCart} />
+              {enableCount ? (
+                <ItemCountCart
+                  stock={stock}
+                  initial={1}
+                  quantity={quantity}
+                  setQuantity={setQuantity}
+                  ClickToAddToCart={ClickToAddToCart}
+                  setEnableCount={setEnableCount}
+                />
+              ) : (
+                <>
+                <h6>Se agregó {quantity} productos al carrito </h6>
+                <Button variant="primary btnVolver" onClick={() => nav(`/cart`)}>
+                Finalizar Compra
+              </Button></>
+              )}
             </ListGroupItem>
           </ListGroup>
         </Card.Body>

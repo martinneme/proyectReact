@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-export default function ItemCountCart({ stock, initial,addToCart }) {
+export default function ItemCountCart({ stock, initial,ClickToAddToCart }) {
   const [itemCount, SetItemCount] = useState(initial);
 
   const delItem = () => {
@@ -30,7 +30,7 @@ export default function ItemCountCart({ stock, initial,addToCart }) {
             +
           </Button>
         </div>
-        <Button variant="primary addToCart" onClick={()=>addToCart(itemCount)} >Agregar al carrito</Button>
+        <Button variant="primary addToCart" onClick={()=>ClickToAddToCart(itemCount)} >Agregar al carrito</Button>
       </div>
     </>
   );

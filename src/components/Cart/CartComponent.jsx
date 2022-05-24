@@ -7,7 +7,7 @@ export default function CartComponent() {
   const {cart} = useContext(cartContext)
 
     useEffect(()=>{
-        setcountItemCart(cart)
+        setcountItemCart(cart.length)
     },[cart])
     
   return (

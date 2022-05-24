@@ -1,26 +1,34 @@
 import { createContext } from "react";
-import  { useState } from "react";
+import { useState } from "react";
 
+export const cartContext = createContext();
+const Provider = cartContext.Provider;
 
-export const cartContext = createContext()
- const Provider = cartContext.Provider
+export default function CartProvider({ children }) {
+  const [cart, setCart] = useState([]);
 
-export default function CartProvider({children}) {
-    const [cart,setCart] = useState(0)
+  const addToCart = (item, quantity) => {
+    if (isInCart(item.id)) {
+      const newCart = cart.map((cartItem) => {
+        if (cartItem.id === item.id) {
+          cartItem.quantity++;
+        }
+        return cartItem;
+      });
+      setCart(newCart);
+    } else {
+      setCart([...cart, { ...item, quantity: quantity }]);
+    }
+  };
 
+  const isInCart = (id) => {
+    cart.map((item) => {
+      if (item.id === id) {
+        return true;
+      }
+      return false;
+    });
+  };
 
-    const addToCart = (quantity) => {
-        console.log(`Se agrego ${quantity} cantidad de producto/s al carrito`)
-        console.log(cart+quantity)
-        setCart(cart+quantity)
-      };
-
-
-  return (
-<Provider value={{addToCart,cart}}>
-
-      {children}
-</Provider>
-
-  );
+  return <Provider value={{ addToCart, cart }}>{children}</Provider>;
 }
