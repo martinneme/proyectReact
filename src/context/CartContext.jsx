@@ -6,12 +6,13 @@ export const cartContext = createContext()
  const Provider = cartContext.Provider
 
 export default function CartProvider({children}) {
-    const [cart,setCart] = useState([])
+    const [cart,setCart] = useState(0)
 
 
     const addToCart = (quantity) => {
         console.log(`Se agrego ${quantity} cantidad de producto/s al carrito`)
-        setCart(quantity)
+        console.log(cart+quantity)
+        setCart(cart+quantity)
       };
 
 
