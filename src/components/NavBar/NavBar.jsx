@@ -1,5 +1,5 @@
 import { Nav, Navbar, Container } from "react-bootstrap";
-import CartComponent from "../Cart/CartComponent";
+import CartComponent from "../Cart/CartBadgeIcon";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
@@ -18,15 +18,15 @@ export default function NavBar() {
             </NavLink>
 
             <NavLink to="/category/1" className="btnNav">
-              Categoria 1
+              Classic
             </NavLink>
 
             <NavLink to="/category/2" className="btnNav">
-              Categoria 2
+              Smart
             </NavLink>
 
             <NavLink to="/category/3" className="btnNav">
-              Categoria 3
+             For Home
             </NavLink>
           </Nav>
         </Container>

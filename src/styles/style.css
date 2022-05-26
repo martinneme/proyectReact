@@ -153,6 +153,36 @@ h1 {
     margin-right: 2%;
 }
 
+.prodCartView {
+  text-align: center;
+    width: 10%!important;
+    border-radius: 5px!important;
+    margin-right: 2%;
+}
+
+.CardItemCart{
+    display: flex;
+    flex-direction: row!important;
+    width: 80%;
+    margin:auto;
+    padding: 1%;
+    align-items: center;
+}
+
+.DeleteItemCartBtn{
+   margin: auto;
+    background-color: red!important;
+    color:white!important;
+    border: none!important;
+    
+  
+}
+
+.CardBtnDelete{
+    border: none!important;
+    width: 20%;
+}
+
 
 .spinner {
     margin-top: 10%;

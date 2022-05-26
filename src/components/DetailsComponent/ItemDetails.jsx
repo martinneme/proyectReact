@@ -12,7 +12,7 @@ export default function ItemDetails({ productDetail }) {
   const nav = useNavigate();
 
   const { addToCart} = useContext(cartContext);
-
+  
   const [enableCount, setEnableCount] = useState(true);
   const [quantity, setQuantity] = useState(0);
 
