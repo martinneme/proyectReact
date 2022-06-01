@@ -1,38 +1,40 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { cartContext } from "../../context/CartContext";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import CartEmpty from "./CartEmpty";
+import CartProduct from "./Cartroduct";
+import { Button} from "react-bootstrap";
 
 export default function CartView() {
-  const { cart, removeItemCart } = useContext(cartContext);
+  const { cart, removeItemCart,suma } = useContext(cartContext);
+  const [emptyCart, setEmptyCart] = useState(true);
+  const [totalPrice, settotalPrice] = useState(0);
+
+  useEffect(()=>{
+   cart.length ? setEmptyCart(false) : setEmptyCart(true)
+   settotalPrice(suma())
+   // eslint-disable-next-line 
+},[cart])
+
+
 
   return (
     <>
-      {cart.map((item) => {
-        return (
-            <> 
-            <h1>Carrito</h1>
-          <Card className="CardItemCart">
-            <Card.Img
-              className="prodCartView"
-              src={item.urlImg}
-              alt="Card cap"
-            />
-            <ul>{item.title}</ul>
-            <ul>Precio Unitario: ${item.price}</ul>
-            <ul>Cantidad:{item.quantity}</ul>
-            <ul>Precio total: ${parseInt(item.price) * item.quantity}</ul>
-            <Card className="CardBtnDelete">
-              <Button
-                className="DeleteItemCartBtn"
-                onClick={() => removeItemCart(item.id)}
-              >
-                X
-              </Button>
-            </Card>
-          </Card>
-          </>
-        );
-      })}
+   
+      <h1>Carrito</h1>
+      { emptyCart ?(< CartEmpty />)  :(cart.map((item) => {
+          
+          return <CartProduct item={item} key={item.id} removeItemCart={removeItemCart}/>})
+      ) 
+     
+      }
+      <Card style={{ display: emptyCart && "none" }}>
+      <h3>Total a pagar: ${totalPrice}</h3>
+      <Button variant="success">
+          Checkout
+      </Button>
+      </Card>
+
     </>
   );
 }

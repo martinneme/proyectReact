@@ -12,12 +12,7 @@ export default function ItemCountCart({ stock, initial,ClickToAddToCart }) {
     if (itemCount < stock) SetItemCount(itemCount + 1);
   };
 
-  React.useEffect(() => {
-    if (itemCount === stock) {
-      console.log("Has alcanzado el limite de stock");
-    }
-  }, [itemCount, stock, initial]);
-
+  
   return (
     <>
       <div className="itemAddCard">

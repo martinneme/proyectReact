@@ -1,5 +1,5 @@
 import { Nav, Navbar, Container } from "react-bootstrap";
-import CartComponent from "../Cart/CartBadgeIcon";
+import CartComponent from "../Cart/CartWidget";
 import { NavLink } from "react-router-dom";
 
 export default function NavBar() {

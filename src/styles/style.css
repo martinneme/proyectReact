@@ -36,9 +36,9 @@ nav {
     margin-right:1% ;
 }
 
-.bg-light {
-    background-color: #ECECEC !important;
-}
+
+
+
 
 .bg-info{
 background-color: #5DADE2!important;
@@ -68,11 +68,24 @@ h1 {
 }
 
 .cartClass {
-    background-color: #ECECEC;
-    border: none;
-   
-    
+    height: auto;
+    width: auto;
+    background-color: #5DADE2!important;
+    border: none; 
+    padding: 5%;
+    margin: 1%;
 }
+.badgeClass{
+    color: #FFFFFF;
+  
+
+}
+
+.cartImage{
+    padding:5%;
+}
+
+
 
 .list-group-flush {
     padding-top: 2%;
