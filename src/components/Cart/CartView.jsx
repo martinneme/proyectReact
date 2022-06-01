@@ -31,7 +31,7 @@ export default function CartView() {
       <Card style={{ display: emptyCart && "none" }}>
       <h3>Total a pagar: ${totalPrice}</h3>
       <Button variant="success">
-          Checkout
+          Terminar mi compra
       </Button>
       </Card>
 
