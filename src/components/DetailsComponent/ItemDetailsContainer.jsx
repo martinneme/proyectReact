@@ -1,38 +1,32 @@
-
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import ItemDetails from "./ItemDetails";
 import SpinnerLoading from "../Spinner/Spinner";
 import { useParams } from "react-router-dom";
+import { getFirestore, doc ,getDoc} from "firebase/firestore";
 
 export default function ItemDetailsContainer() {
-    const [ProductDetail, setProductDetail] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const {id} = useParams();
+  const [ProductDetail, setProductDetail] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { id } = useParams();
 
-  
-    useEffect(() => {
-      setLoading(true);
-    
+  useEffect(() => {
+    setLoading(true);
 
-      fetch("https://apimocha.com/watchproducts/watch")
-        .then((response) => response.json())
-        .then((res) => setProductDetail(res.find((item)=>item.id === id )))
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
-  
-      // eslint-disable-next-line
-    },[]);
- 
-  
+    const db = getFirestore();
+    const productRef = doc(db, "products", id);
+    getDoc(productRef).then((snapshot) => {
+      setProductDetail({ id: snapshot.id, ...snapshot.data() });
+      ProductDetail && setLoading(false)
+    });
+  }, [id]);
+
   return (
-
-<> 
-{loading ? (
-          <SpinnerLoading />
-        ) : (
-            <ItemDetails  productDetail={ProductDetail}/> 
-        )}
-
-</>
+    <>
+      {loading ? (
+        <SpinnerLoading />
+      ) : (
+        <ItemDetails productDetail={ProductDetail} />
+      )}
+    </>
   );
 }

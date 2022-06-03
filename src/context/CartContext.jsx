@@ -13,7 +13,7 @@ export default function CartProvider({ children }) {
     if (isInCart(item.id)) {
       const newCart = cart.map((cartItem) => {
         if (cartItem.id === item.id) {
-          cartItem.quantity++;
+          cartItem.quantity+=quantity;
         }
         return cartItem;
       });
@@ -40,12 +40,7 @@ export default function CartProvider({ children }) {
   };
 
   const suma = () => {
-    let total =0;
-    cart.forEach(item => {
-        return total+=(item.price*item.quantity)
-    });
-    return total
-
+    return cart.reduce((acc, prod) => acc += prod.price*prod.quantity, 0 )
   }
 
   const isInCart = (id) => {

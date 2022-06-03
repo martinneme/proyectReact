@@ -23,8 +23,6 @@ export default function ItemDetails({ productDetail }) {
   };
 
 
-
-
   return (
     <>
       <Card className="CardProdDetail">
