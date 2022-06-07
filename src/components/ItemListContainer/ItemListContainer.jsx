@@ -2,9 +2,9 @@ import ItemList from "../ItemList/ItemList";
 import React, { useEffect, useState } from "react";
 import SpinnerLoading from "../Spinner/Spinner";
 import { useParams } from "react-router-dom";
-
+import {db} from '../../Firebase/config'
 import {
-  getFirestore,
+  
   getDocs,
   collection,
   where,
@@ -19,7 +19,7 @@ export default function ItemListContainer() {
 
   useEffect(() => {
     setLoading(true);
-    const db = getFirestore();
+    
 
     if (id) {
       const q = query(collection(db, "products"), where("category", "==", id));
@@ -43,6 +43,7 @@ export default function ItemListContainer() {
       });
     }
     listProducts && setLoading(false);
+
   }, [id]);
 
   return (
