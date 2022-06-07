@@ -10,14 +10,17 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAsgfWk5IXCHByZt5kSYs2ZKQKpvVUZgf8",
-  authDomain: "kukiapp-ec7e3.firebaseapp.com",
-  projectId: "kukiapp-ec7e3",
-  storageBucket: "kukiapp-ec7e3.appspot.com",
-  messagingSenderId: "188071983839",
-  appId: "1:188071983839:web:2bb9be8b27c0964234876a"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
 // Initialize Firebase
  const app = initializeApp(firebaseConfig);
  export const db = getFirestore(app);
+
+
+

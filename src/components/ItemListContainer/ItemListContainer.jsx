@@ -43,7 +43,6 @@ export default function ItemListContainer() {
       });
     }
     listProducts && setLoading(false);
-
   }, [id]);
 
   return (
