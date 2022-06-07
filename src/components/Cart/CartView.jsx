@@ -4,11 +4,14 @@ import { Card } from "react-bootstrap";
 import CartEmpty from "./CartEmpty";
 import CartProduct from "./Cartroduct";
 import { Button} from "react-bootstrap";
+import Checkout from "../Checkout/Checkout";
 
 export default function CartView() {
   const { cart, removeItemCart,suma } = useContext(cartContext);
   const [emptyCart, setEmptyCart] = useState(true);
+  const [modal, setModal] = useState(false);
   const [totalPrice, settotalPrice] = useState(0);
+
 
   useEffect(()=>{
    cart.length ? setEmptyCart(false) : setEmptyCart(true)
@@ -16,7 +19,9 @@ export default function CartView() {
    // eslint-disable-next-line 
 },[cart])
 
-
+const handleClose = () => {
+    setModal(false)
+  }
 
   return (
     <>
@@ -30,9 +35,10 @@ export default function CartView() {
       }
       <Card style={{ display: emptyCart && "none" }}>
       <h3>Total a pagar: ${totalPrice}</h3>
-      <Button variant="success">
+      <Button variant="success" onClick={()=>setModal(true)}>
           Terminar mi compra
       </Button>
+      {modal && <Checkout handleClose={handleClose} total={totalPrice}/>}
       </Card>
 
     </>
