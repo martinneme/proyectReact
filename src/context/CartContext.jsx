@@ -24,7 +24,10 @@ export default function CartProvider({ children }) {
     setCountCart(countCart+quantity)
   };
 
-  const clearCart = () => setCart([]);
+  const clearCart = () => {
+    setCart([]);
+    setCountCart(0)
+  }
 
   const removeItemCart = (id) => {
 

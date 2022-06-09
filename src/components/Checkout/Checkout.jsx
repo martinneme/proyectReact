@@ -1,11 +1,22 @@
-import { useContext } from "react";
+import { useContext, createRef } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { cartContext } from "../../context/CartContext";
+import { db } from "../../Firebase/config";
+import {
+  addDoc,
+  doc,
+  collection,
+  writeBatch,
+  getDoc
+} from "firebase/firestore";
 
-export default function Checkout({ handleClose ,total}) {
-  const nav = useNavigate();
+export default function Checkout({ handleClose, total }) {
   const { cart } = useContext(cartContext);
+  const form = createRef();
+  const nav = useNavigate();
+
+  const ordersCollection = collection(db, "orders");
 
   const order = {
     buyer: {
@@ -16,8 +27,39 @@ export default function Checkout({ handleClose ,total}) {
       secretCardNumber: 0,
     },
     date: new Date().toLocaleString(),
-    Cart: [ ...cart ],
+    Cart: [...cart],
     total: total,
+  };
+
+  const sendOrder = async () => {
+    if (
+      order.name !== "" &&
+      order.lastName !== "" &&
+      order.Address !== "" &&
+      order.CreditCard !== "" &&
+      order.secretCardNumber !== ""
+    ) {
+      addDoc(ordersCollection, order).then(({ id }) => {
+        console.log(`se genero el pedido ID:${id}`);
+        nav(`/orderConfirm/${id}`)
+        form.current.reset();
+        handleClose();
+      });
+
+      cart.forEach((item) => {
+        const batch = writeBatch(db);
+        getDoc(doc(db, "products", item.id)).then((snapshot) => {
+          if (snapshot.data().stock >= item.quantity) {
+            batch.update(doc(db, "products", snapshot.id), {
+              stock: snapshot.data().stock - item.quantity,
+            });
+            return batch.commit();
+          }
+        });
+      });
+    } else {
+      alert("Debe completar todos los datos");
+    }
   };
 
   return (
@@ -27,7 +69,7 @@ export default function Checkout({ handleClose ,total}) {
           <Modal.Title>Confirmar orden</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form ref={form}>
             <Form.Group className="mb-3" controlId="Name">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
@@ -79,7 +121,7 @@ export default function Checkout({ handleClose ,total}) {
                 placeholder=""
                 autoFocus
                 onChange={(e) => {
-                  order.buyer.secretCardNumber =parseInt(e.target.value);
+                  order.buyer.secretCardNumber = parseInt(e.target.value);
                 }}
               />
             </Form.Group>
@@ -89,12 +131,7 @@ export default function Checkout({ handleClose ,total}) {
           <Button variant="secondary" onClick={handleClose}>
             Volver
           </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              console.log(order);
-            }}
-          >
+          <Button variant="primary" onClick={sendOrder}>
             Comprar
           </Button>
         </Modal.Footer>

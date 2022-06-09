@@ -67,6 +67,11 @@ h1 {
 
 }
 
+.BtnCart{
+    align-self: center;
+    width: 40%;
+}
+
 .cartClass {
     height: auto;
     width: auto;
@@ -148,7 +153,13 @@ h1 {
     justify-content: center;
 }
 
-
+.footerCheckout{
+    border: none;
+    display: flex;
+    flex-direction: row;
+   justify-content: center;
+   
+}
 
 .itemCountValue {
     margin: 5%;
@@ -209,6 +220,13 @@ h1 {
     color: #000000!important;
 }
 
+.noAvailable{
+    margin: 2%;
+    background-color: #000000!important;
+    color: #FFFFFF;
+    border: none;
+}
+
 .detailsFooter{
     background-color: #ECECEC!important;
 }
@@ -240,11 +258,12 @@ h1 {
     margin: 2%;
     color: #FFFFFF!important;
     background-color: #000000!important;
+    border: none;
 }
 
 .addToCart:hover{
     background-color: #58D68D!important;
-    border-color: #58D68D;
+  border: none;
     color: #000000!important;  
 }
 

@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Footer from './components/Footer/Footer'
 import CartProvider from "./context/CartContext";
 import CartView from "./components/Cart/CartView";
-import Checkout from "./components/Checkout/Checkout";
+import OrderConfirm from "./components/Checkout/OrderConfirm";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <Route path="/category/:id" element={<ItemListContainer />} />
             <Route path="/product/:id" element={<ItemDetailsContainer />} />
             <Route path="/cart" element={<CartView />} />
-            <Route path="/Checkout" element={<Checkout />} />
+            <Route path="/orderConfirm/:id" element={<OrderConfirm />} />
           </Routes>
         </CartProvider>
       </BrowserRouter>
