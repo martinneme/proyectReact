@@ -4,9 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Item({ item }) {
 
-
-
-
   const nav = useNavigate()
 
   return (
