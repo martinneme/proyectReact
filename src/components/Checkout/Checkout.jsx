@@ -2,6 +2,8 @@ import { useContext, createRef } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { cartContext } from "../../context/CartContext";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import { db } from "../../Firebase/config";
 import {
   addDoc,
@@ -11,7 +13,7 @@ import {
   getDoc
 } from "firebase/firestore";
 
-export default function Checkout({ handleClose, total }) {
+export default function Checkout({ handleClose, total,clearCart }) {
   const { cart } = useContext(cartContext);
   const form = createRef();
   const nav = useNavigate();
@@ -31,17 +33,34 @@ export default function Checkout({ handleClose, total }) {
     total: total,
   };
 
+  const orderConfirm= (id) =>{
+    const MySwal = withReactContent(Swal)
+    
+    MySwal.fire({
+     icon: 'success',
+     title: <p>Se genero tu pedido!</p>,
+     text:`N°:${id}`,
+     confirmButtonColor: '#000000',
+     confirmButtonText: 'Volver al Home',
+     showCloseButton: true
+   }).then((result) => {
+    if (result.isConfirmed) {
+      clearCart()
+      nav(`/`)
+    }})
+  }
   const sendOrder = async () => {
     if (
-      order.name !== "" &&
-      order.lastName !== "" &&
-      order.Address !== "" &&
-      order.CreditCard !== "" &&
-      order.secretCardNumber !== ""
-    ) {
+      order.buyer.name !== "" &&
+      order.buyer.lastName !== "" &&
+      order.buyer.Address !== "" &&
+      order.buyer.CreditCard !== 0 &&
+      order.buyer.secretCardNumber !== 0
+    ){
+  
       addDoc(ordersCollection, order).then(({ id }) => {
-        console.log(`se genero el pedido ID:${id}`);
-        nav(`/orderConfirm/${id}`)
+        
+        orderConfirm(id)
         form.current.reset();
         handleClose();
       });
@@ -57,6 +76,8 @@ export default function Checkout({ handleClose, total }) {
           }
         });
       });
+
+
     } else {
       alert("Debe completar todos los datos");
     }

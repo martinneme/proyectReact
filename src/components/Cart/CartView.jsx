@@ -45,7 +45,7 @@ const handleClose = () => {
       <Button variant="success" className="BtnCart" onClick={()=>setModal(true)}>
           Terminar compra
       </Button>
-      {modal && <Checkout handleClose={handleClose} total={totalPrice}/>}
+      {modal && <Checkout handleClose={handleClose} total={totalPrice} clearCart={clearCart}/>}
       </Card>
       </Card>
 
